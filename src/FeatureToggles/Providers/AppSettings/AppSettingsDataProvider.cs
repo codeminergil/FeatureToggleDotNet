@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FeatureToggles;
-using FeatureToggles.Models;
-using FeatureToggles.Providers;
-using FeatureTogglesIConfiguration.JsonConfiguration;
-
-namespace TheConfigStandard.JsonProviders
+﻿
+namespace FeatureToggles.Providers.AppSettings
 {
     using Microsoft.Extensions.Configuration;
     using System.Net;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using FeatureToggles.Providers;
+    using FeatureToggles.Configuration.AppSettings;
+    using FeatureToggles;
+    using FeatureToggles.Models;
 
     public class AppSettingsDataProvider : IToggleDataProvider
     {
@@ -137,3 +135,4 @@ namespace TheConfigStandard.JsonProviders
 
     }
 }
+
