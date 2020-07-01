@@ -1,7 +1,7 @@
 ﻿
 namespace FeatureToggles.Configuration.AppSettings
 {
-    public class RoleElement
+    public class RoleProperties
     {
         public string name { get; set; }
     }

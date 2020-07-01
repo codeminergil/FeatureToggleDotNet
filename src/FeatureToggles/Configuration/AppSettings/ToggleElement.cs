@@ -5,11 +5,11 @@ namespace FeatureToggles.Configuration.AppSettings
 
     public class ToggleElement
     {
-        public List<RolesElementCollection> roles { get; set; }
+        public List<RolesObject> roles { get; set; }
 
-        public List<UsersElementCollection> users { get; set; }
+        public List<UsersObject> users { get; set; }
 
-        public List<IpAddressesElementCollection> ipaddresses { get; set; }
+        public List<IpAddressesObject> ipaddresses { get; set; }
 
         public string name { get; set; }
 
