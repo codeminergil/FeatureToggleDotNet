@@ -1,10 +1,9 @@
 ﻿
-namespace FeatureTogglesCoreTests.JsonTests
+namespace FeatureTogglesCoreTests
 {
     using Microsoft.Extensions.Configuration;
     using NUnit.Framework;
-    using FeatureTogglesIConfiguration.JsonConfiguration;
-    using NUnit.Framework.Internal;
+    using FeatureToggles.Configuration.AppSettings;
 
     [TestFixture]
     public class ConfigurationTests

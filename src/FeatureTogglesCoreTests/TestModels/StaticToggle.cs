@@ -1,37 +1,37 @@
 ﻿
-namespace FeatureTogglesCoreTests.JsonTests.TestModels
+namespace FeatureTogglesCoreTests.TestModels
 {
-    //using Microsoft.Extensions.Configuration;
-    //using System.Diagnostics.CodeAnalysis;
-    //using FeatureTogglesIConfiguration;
-    //using FeatureTogglesIConfiguration.JsonConfiguration;
-    //using FeatureTogglesIConfiguration.JsonProviders;
+    using Microsoft.Extensions.Configuration;
+    using System.Diagnostics.CodeAnalysis;
+    using FeatureToggles;
+    using FeatureToggles.Configuration.AppSettings.Providers;
+    using FeatureToggles.Providers.AppSettings;
 
-    //[ExcludeFromCodeCoverage]
-    //public static class StaticToggle
-    //{
-    //    public static IConfiguration InitConfiguration()
-    //    {
-    //        var config = new ConfigurationBuilder()
-    //            .AddJsonFile("app.config.json")
-    //            .Build();
-    //        return config;
-    //    }
+    [ExcludeFromCodeCoverage]
+    public static class StaticToggle
+    {
+        public static IConfiguration InitConfiguration()
+        {
+            var config = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
+            return config;
+        }
 
-    //    public static IConfiguration configuration = InitConfiguration();
-    //    private static readonly ToggleFactory Factory = new ToggleFactory(new AppConfigurationProvider(configuration), new AppConfigDataProvider(configuration));
+        public static IConfiguration configuration = InitConfiguration();
+        private static readonly ToggleFactory Factory = new ToggleFactory(new AppSettingsConfigurationProvider(configuration), new AppSettingsDataProvider(configuration));
 
-    //    public static bool IsEnabled
-    //    {
-    //        get
-    //        {
-    //            Toggle toggle = Factory.Get<StrongToggleId>();
+        public static bool IsEnabled
+        {
+            get
+            {
+                Toggle toggle = Factory.Get<StrongToggleId>();
 
-    //            // OR:
-    //            // Toggle toggle = Factory.Get("StaticToggle");
+                // OR:
+                // Toggle toggle = Factory.Get("StaticToggle");
 
-    //            return toggle.IsEnabled;
-    //        }
-    //    }
-    //}
+                return toggle.IsEnabled;
+            }
+        }
+    }
 }

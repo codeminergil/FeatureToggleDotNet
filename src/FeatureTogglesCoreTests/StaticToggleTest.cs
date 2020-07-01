@@ -1,20 +1,20 @@
 ﻿
-namespace FeatureTogglesCoreTests.JsonTests
+namespace FeatureTogglesCoreTests
 {
-    //using NUnit.Framework;
-    //using System.Diagnostics.CodeAnalysis;
-    //using FeatureTogglesCoreTests.JsonTests.TestModels;
+    using NUnit.Framework;
+    using System.Diagnostics.CodeAnalysis;
+    using FeatureTogglesCoreTests.TestModels;
 
-    //[TestFixture]
-    //[ExcludeFromCodeCoverage]
-    //public class CoreStaticToggleTest
-    //{
-    //    [Test]
-    //    public void StaticToggleTest()
-    //    {
-    //        bool flag = StaticToggle.IsEnabled;
+    [TestFixture]
+    [ExcludeFromCodeCoverage]
+    public class CoreStaticToggleTest
+    {
+        [Test]
+        public void StaticToggleTest()
+        {
+            bool flag = StaticToggle.IsEnabled;
 
-    //        Assert.IsTrue(flag, "Static flag should be enabled");
-    //    }
-    //}
+            Assert.IsTrue(flag, "Static flag should be enabled");
+        }
+    }
 }

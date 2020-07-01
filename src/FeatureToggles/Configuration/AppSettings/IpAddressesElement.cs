@@ -1,5 +1,5 @@
 ﻿
-namespace FeatureTogglesIConfiguration.JsonConfiguration
+namespace FeatureToggles.Configuration.AppSettings
 {
     public class IpAddressesElement
     {

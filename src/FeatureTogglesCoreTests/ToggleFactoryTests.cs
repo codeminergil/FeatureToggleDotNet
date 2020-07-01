@@ -1,5 +1,5 @@
 ﻿
-namespace FeatureTogglesCoreTests.JsonTests
+namespace FeatureTogglesCoreTests
 {
     using System;
     using FeatureToggles.Configuration;

@@ -1,4 +1,4 @@
-﻿namespace FeatureTogglesIConfiguration.JsonConfiguration
+﻿namespace FeatureToggles.Configuration.AppSettings
 {
     using System.Collections.Generic;
 
