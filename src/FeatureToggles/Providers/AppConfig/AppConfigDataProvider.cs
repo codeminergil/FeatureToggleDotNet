@@ -17,7 +17,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace FeatureToggles.Providers
+namespace FeatureToggles.Providers.AppConfig
 {
     using System;
     using System.Collections.Generic;
