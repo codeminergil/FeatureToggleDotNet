@@ -1,7 +1,7 @@
 ﻿
 namespace FeatureToggles.Configuration.AppSettings
 {
-    public class UsersElement
+    public class UserProperties
     {
         public string name { get; set; }
     }
