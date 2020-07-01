@@ -1,6 +1,5 @@
-﻿
-//-----------------------------------------------------------------------
-// <copyright file="ToggleTests.cs" company="Code Miners Limited">
+﻿//-----------------------------------------------------------------------
+// <copyright file="StrongTypedTests.cs" company="Code Miners Limited">
 //  Copyright (c) 2019 Code Miners Limited
 //
 //  This program is free software: you can redistribute it and/or modify
@@ -18,22 +17,31 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace ToggleTestsApp.Config
+namespace ToggleTestsAppSettings.json
 {
-    using global::ToggleTests.TestModels;
-    using System.Diagnostics.CodeAnalysis;
     using FeatureToggles;
-    using FeatureToggles.Configuration;
-    using FeatureToggles.Configuration.AppConfig.Providers;
+    using FeatureToggles.Configuration.AppSettings.Providers;
     using FeatureToggles.Providers;
-    using FeatureToggles.Providers.AppConfig;
+    using FeatureTogglesCoreTests.TestModels;
     using Moq;
     using NUnit.Framework;
+    using System.Diagnostics.CodeAnalysis;
+    using FeatureToggles.Configuration;
+    using FeatureToggles.Providers.AppSettings;
+    using Microsoft.Extensions.Configuration;
 
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    public class StrongTypeTests
+    class StrongTypedTests
     {
+        public static IConfiguration InitConfiguration()
+        {
+            var config = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
+            return config;
+        }
+
         [Test]
         public void TestStrongToggleEnabled()
         {
@@ -54,7 +62,7 @@ namespace ToggleTestsApp.Config
         [Test]
         public void FromConfigTest()
         {
-            ToggleFactory factory = new ToggleFactory(new AppConfigurationProvider(), new AppConfigDataProvider());
+            ToggleFactory factory = new ToggleFactory(new AppSettingsConfigurationProvider(InitConfiguration()), new AppSettingsDataProvider(InitConfiguration()));
 
             Toggle toggle = factory.Get<StrongToggleId>();
 
@@ -63,7 +71,6 @@ namespace ToggleTestsApp.Config
             Assert.AreEqual("StrongToggleId", toggle.Name);
             Assert.IsTrue(toggle.IsEnabled);
         }
-
 
         private IToggleConfiguration GetEnabledConfiguration()
         {
