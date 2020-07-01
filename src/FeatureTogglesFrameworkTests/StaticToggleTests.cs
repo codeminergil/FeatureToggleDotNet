@@ -17,11 +17,11 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace ToggleTests
+namespace ToggleTestsApp.Config
 {
     using System.Diagnostics.CodeAnalysis;
+    using global::ToggleTests.TestModels;
     using NUnit.Framework;
-    using TestModels;
 
     [TestFixture]
     [ExcludeFromCodeCoverage]

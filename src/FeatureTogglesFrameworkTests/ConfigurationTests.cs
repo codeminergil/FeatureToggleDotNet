@@ -17,7 +17,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace ToggleTests
+namespace ToggleTestsApp.Config
 {
     using System.Configuration;
     using System.Diagnostics.CodeAnalysis;

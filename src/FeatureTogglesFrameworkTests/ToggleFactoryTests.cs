@@ -17,7 +17,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace ToggleTests
+namespace ToggleTestsApp.Config
 {
     using System.Diagnostics.CodeAnalysis;
     using FeatureToggles;
