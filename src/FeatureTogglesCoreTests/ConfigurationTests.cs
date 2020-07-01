@@ -13,7 +13,6 @@ namespace FeatureTogglesCoreTests.JsonTests
         public static IConfiguration InitConfiguration()
         {
             var config = new ConfigurationBuilder()
-                //.AddJsonFile("app.config.json")
                 .AddJsonFile("appsettings.json")
                 .Build();
             return config;
