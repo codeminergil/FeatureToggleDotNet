@@ -1,19 +1,19 @@
-﻿namespace FeatureToggles.Configuration.AppConfig
+﻿namespace FeatureToggles.Configuration
 {
     using System.Collections.Generic;
     using System.Configuration;
 
-    [ConfigurationCollection(typeof(UsersElement), AddItemName = "user", CollectionType = ConfigurationElementCollectionType.BasicMap)]
-    public class UsersElementCollection : ConfigurationElementCollection, IEnumerable<UsersElement>
+    [ConfigurationCollection(typeof(ToggleElement), AddItemName = "role", CollectionType = ConfigurationElementCollectionType.BasicMap)]
+    public class RolesElementCollection : ConfigurationElementCollection, IEnumerable<RoleElement>
     {
         /// <summary>
         /// Gets or sets a url element from the collection by index
         /// </summary>
         /// <param name="index">The index</param>
         /// <returns>The url element</returns>
-        public UsersElement this[int index]
+        public RoleElement this[int index]
         {
-            get => BaseGet(index) as UsersElement;
+            get => BaseGet(index) as RoleElement;
             set
             {
                 if (Count <= 0)
@@ -35,12 +35,12 @@
         /// Iterator for returning url elements from the collection
         /// </summary>
         /// <returns>A url element</returns>
-        public new IEnumerator<UsersElement> GetEnumerator()
+        public new IEnumerator<RoleElement> GetEnumerator()
         {
             int count = Count;
             for (int i = 0; i < count; i++)
             {
-                yield return BaseGet(i) as UsersElement;
+                yield return BaseGet(i) as RoleElement;
             }
         }
 
@@ -51,7 +51,7 @@
         /// <returns>The configuration element</returns>
         protected override ConfigurationElement CreateNewElement()
         {
-            return new UsersElement();
+            return new RoleElement();
         }
 
         /// <summary>
@@ -61,7 +61,7 @@
         /// <returns>The actual instance required</returns>
         protected override object GetElementKey(ConfigurationElement element)
         {
-            return ((UsersElement)element).Name;
+            return ((RoleElement)element).Name;
         }
     }
 }
