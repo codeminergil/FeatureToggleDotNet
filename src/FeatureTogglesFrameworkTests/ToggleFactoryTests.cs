@@ -24,7 +24,6 @@ namespace ToggleTestsApp.Config
     using FeatureToggles.Configuration;
     using FeatureToggles.Models;
     using FeatureToggles.Providers;
-    using FeatureToggles.Providers.AppConfig;
     using Moq;
     using NUnit.Framework;
 

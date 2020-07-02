@@ -22,7 +22,6 @@ namespace ToggleTestsApp.Config
     using System.Configuration;
     using System.Diagnostics.CodeAnalysis;
     using FeatureToggles.Configuration;
-    using FeatureToggles.Configuration.AppConfig;
     using NUnit.Framework;
 
     [TestFixture]

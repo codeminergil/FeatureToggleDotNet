@@ -21,8 +21,8 @@ namespace ToggleTests.TestModels
 {
     using System.Diagnostics.CodeAnalysis;
     using FeatureToggles;
-    using FeatureToggles.Configuration.AppConfig.Providers;
-    using FeatureToggles.Providers.AppConfig;
+    using FeatureToggles.Configuration;
+    using FeatureToggles.Providers;
 
     [ExcludeFromCodeCoverage]
     public static class StaticToggle

@@ -1,19 +1,19 @@
-﻿namespace FeatureToggles.Configuration.AppConfig
+﻿namespace FeatureToggles.Configuration
 {
     using System.Collections.Generic;
     using System.Configuration;
 
-    [ConfigurationCollection(typeof(ToggleElement), AddItemName = "toggle", CollectionType = ConfigurationElementCollectionType.BasicMap)]
-    public class ToggleElementCollection : ConfigurationElementCollection, IEnumerable<ToggleElement>
+    [ConfigurationCollection(typeof(UsersElement), AddItemName = "user", CollectionType = ConfigurationElementCollectionType.BasicMap)]
+    public class UsersElementCollection : ConfigurationElementCollection, IEnumerable<UsersElement>
     {
         /// <summary>
         /// Gets or sets a url element from the collection by index
         /// </summary>
         /// <param name="index">The index</param>
         /// <returns>The url element</returns>
-        public ToggleElement this[int index]
+        public UsersElement this[int index]
         {
-            get => BaseGet(index) as ToggleElement;
+            get => BaseGet(index) as UsersElement;
             set
             {
                 if (Count <= 0)
@@ -35,12 +35,12 @@
         /// Iterator for returning url elements from the collection
         /// </summary>
         /// <returns>A url element</returns>
-        public new IEnumerator<ToggleElement> GetEnumerator()
+        public new IEnumerator<UsersElement> GetEnumerator()
         {
             int count = Count;
             for (int i = 0; i < count; i++)
             {
-                yield return BaseGet(i) as ToggleElement;
+                yield return BaseGet(i) as UsersElement;
             }
         }
 
@@ -51,7 +51,7 @@
         /// <returns>The configuration element</returns>
         protected override ConfigurationElement CreateNewElement()
         {
-            return new ToggleElement();
+            return new UsersElement();
         }
 
         /// <summary>
@@ -61,7 +61,7 @@
         /// <returns>The actual instance required</returns>
         protected override object GetElementKey(ConfigurationElement element)
         {
-            return ((ToggleElement)element).Name;
+            return ((UsersElement)element).Name;
         }
     }
 }
